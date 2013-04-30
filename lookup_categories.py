@@ -2,6 +2,8 @@ import httplib, urllib, csv, json, re, sys
 from operator import itemgetter
 
 conn = httplib.HTTPSConnection("data.mingle.io")
+# expects a file of a CSV format, where product is the fifth column
+# see https://github.com/cstuder/cumulizer/tree/master/_sampledata
 reader = csv.reader(sys.stdin, delimiter=';')
 for row in reader:
     # prepare the product name for better search
